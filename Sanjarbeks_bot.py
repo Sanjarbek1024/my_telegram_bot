@@ -1,6 +1,7 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, MessageHandler, filters
 import requests
+from keep_alive import keep_alive
 
 TOKEN = "5954744651:AAGxOmbMsGgMOEoaGCWQH56MMDDXNUc0MLc"
 
@@ -76,4 +77,5 @@ if __name__ == "main":
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, unknown))
 
     print("Bot ishlamoqda...")
+    keep_alive()
     app.run_polling()
